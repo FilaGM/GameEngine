@@ -1,0 +1,41 @@
+#objects_manager_list{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width:98%;
+    height:50%;
+    border:inset;
+}
+.folder_label{
+    visibility:visible;
+}
+.file_label{
+    visibility:visible;
+}
+.file_content{
+    visibility:hidden;
+    position:absolute;
+    margin:0px;
+    padding:0px;
+    top:0px;
+    left:0px;
+}
+.file_label{
+    color:#222;
+}
+.folder_label{
+    color:#222;
+}
+#objects_manager_list ul li{ 
+    padding:0px;
+    list-style-type: none;
+    transform:translate(-10%,0%);
+}
+
+.folder_icon{
+    width:16px;
+    height:16px;
+}
+.file_icon{
+    width:16px;
+    height:16px;
+}
