@@ -1,3 +1,11 @@
 .organizer{
     background-color:#505050;
+    background-image:linear-gradient(to bottom,#fff,#eee);
 }
+button {
+    background-image:linear-gradient(to bottom,#eee,#fff);
+    border-radius:5px;
+    border-color:#fff;
+    border-radius:0px;
+}
+

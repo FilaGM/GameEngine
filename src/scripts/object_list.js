@@ -3,7 +3,7 @@ var list = document.getElementById("main_object_manager_ul");
 function AddFolder(to,name,content){
     newfolder = "";
     newfolder += "<li class='folder'>";
-    newfolder += "<img src='images/folder.ico' class='folder_icon'>"
+    newfolder += "<img src='images/icons/folder.ico' class='folder_icon'>"
     newfolder += "<label class = 'folder_label''>" + name + "</label>"
     newfolder += "<ul class = '"+name+"_content_folder'>"
     newfolder += content
@@ -15,12 +15,13 @@ function AddFolder(to,name,content){
     else{
         list.getElementsByClassName(to + "_content_folder")[0].innerHTML += newfolder;
     }
+    fileAdded();
 }
 
 function AddFile(to,name,content){
     newfile = "";
-    newfile += "<li class='folder'>";
-    newfile += "<img src='images/file.ico' class='file_icon'>"
+    newfile += "<li class='file'>";
+    newfile += "<img src='images/icons/file.ico' class='file_icon'>"
     newfile += "<label class = 'file_label''>" + name + "</label>"
     newfile += "<label class = 'file_content'>"
     newfile += content
@@ -32,10 +33,47 @@ function AddFile(to,name,content){
     else{
         list.getElementsByClassName(to + "_content_folder")[0].innerHTML += newfile;
     }
+    fileAdded();
+}
+
+function AddNewFileButton(){
+    var args = document.getElementsByClassName("add_menu_arg");
+    type = ""
+    name = ""
+    dir = ""
+    for(var i = 0;i < args.length;i++){
+        if(args[i].name == "name_in"){
+            name = args[i].value;
+        }
+        if(args[i].name == "type"){
+            type = args[i].value;
+        }
+        if(args[i].name == "dir"){
+            dir = args[i].value;
+        }
+    }
+    if(type == "folder"){
+        AddFolder(dir,name,"")
+    }
+    if(type == "file"){
+        AddFile(dir,name,"")
+    }
+    if(type == "object"){
+        AddFile(dir,name + ".obj","")
+    }
+}
+
+function fileAdded(){
+    var dirs = document.getElementsByClassName("folder");
+    var sel = document.getElementById("add_menu_select_dir");
+    sel.innerHTML = ""
+    for(var i = 0;i < dirs.length;i++){
+        sel.innerHTML += "<option value='"+dirs[i].childNodes[1].innerHTML+"'>"+dirs[i].childNodes[1].innerHTML+"</option>";
+    }
 }
 
 AddFolder("main","Scripts","");
 AddFile("Scripts","main.js","//Your main game script")
-AddFolder("main","Images","");
+AddFolder("main","Sprites","");
 AddFolder("main","Other","");
 AddFolder("main","Objects","");
