@@ -31,11 +31,35 @@ function AddWindow(windowObject){
     content += "<img src='"+windowObject.icon_dir+"' style='width:24px;height:24px;'>"
     content += "</div>"
     content += "</div>"
-    content += "<div id='"+windowObject.id+"_body' class='static_window_body'>"
+    content += "<div id='"+windowObject.id+"_body' class='"
+    if(windowObject.center == true){
+        content += "center"
+    }
+    content += "'>"
+    if(windowObject.center_elements == true){
+        content += "<div><center>"
+    }
     for(var i = 0;i < windowObject.content.length;i++){
         if(windowObject.content[i].tag == "input"){
             content += "<input name='"+windowObject.content[i].name+"' type='"+windowObject.content[i].type+"'>"
         }
+        if(windowObject.content[i].tag == "button"){
+            content += "<button name='"+windowObject.content[i].name+"' onclick='"+windowObject.content[i].onclick+"'>"
+            content += windowObject.content[i].content
+            content += "</button>"
+        }
+        if(windowObject.content[i].tag == "script"){
+            content += "<script>"+windowObject.content[i].content+"</script>"
+        }
+        if(windowObject.content[i].tag == "br"){
+            content += "<br>"
+        }
+        if(windowObject.content[i].tag == "label"){
+            content += "<label>"+windowObject.content[i].content+"</label>"
+        }
+    }
+    if(windowObject.center_elements == true){
+        content += "</center></div>"
     }
     content +="</div>"
     windowSlot.innerHTML += content;
