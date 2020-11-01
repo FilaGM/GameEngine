@@ -54,3 +54,13 @@
     border:2px solid #999;
     visibility:hidden;
 }
+#add_menu_header{
+    height:10%;
+    width:100%;
+    background-color: #aaa;
+}
+#add_menu_content{
+    position:absolute;
+    top:40%;
+    width:100%;
+}

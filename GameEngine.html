@@ -4,35 +4,14 @@
         <link rel="stylesheet" href="src/styles/alingment.css">
         <link rel="stylesheet" href="src/styles/object_manager.css">
         <link rel="icon" type="image/png" href="images/icons/main_icon.ico"/>
+        <link rel="stylesheet" href="src/styles/static_windows_style.css">
         <title>Html5GameEngine</title>
         <script src="src/scripts/prefabs.js"></script>
         <title></title>
     </head>
     <body>
-        <div id="add_menu" class="centered_div">
-            <div id="add_menu_header">
-                
-            </div>
-            <div id = "add_menu_content">
-                <div>
-                    <label>File/folder name:</label><br>
-                    <label>Type:</label><br>
-                    <label>To folder:</label>
-                </div>
-                <div style = "position:absolute;top:0px;left:30%;">
-                    <input name="name_in" type = "text" class="add_menu_arg"><br>
-                    <select name="type" id="add_menu_select_type" class="add_menu_arg">
-                        <option value="file">File</option>
-                        <option value="folder">Folder</option>
-                        <option value="sprite">Sprite</option>
-                        <option value="object">Object</option>
-                    </select><br>
-                    <select name="dir" id="add_menu_select_dir" class="add_menu_arg">
-
-                    </select>
-                </div>
-                <button onclick="AddNewFileButton();">Add</button>
-            </div>
+        <div id="static_windows">
+            
         </div>
         <div id="sidebar_left" class="organizer">
             <div id="sidebar_left_header">

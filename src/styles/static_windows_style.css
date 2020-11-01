@@ -1,0 +1,13 @@
+#static_windows{
+    position:absolute;
+    z-index: 99999;
+}
+.static_window{
+    position:absolute;
+    z-index: 99999;
+    border:2px solid #999;
+    background-color:#eee;
+}
+.static_window_header{
+        background-color: #aaa;
+}

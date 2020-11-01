@@ -64,12 +64,7 @@ function AddNewFileButton(){
 }
 
 function fileAdded(){
-    var dirs = document.getElementsByClassName("folder");
-    var sel = document.getElementById("add_menu_select_dir");
-    sel.innerHTML = ""
-    for(var i = 0;i < dirs.length;i++){
-        sel.innerHTML += "<option value='"+dirs[i].childNodes[1].innerHTML+"'>"+dirs[i].childNodes[1].innerHTML+"</option>";
-    }
+    
 }
 
 AddFolder("main","Scripts","");
