@@ -27,11 +27,16 @@ function AddWindow(windowObject){
     content += "<div id='"+windowObject.id+"' class='static_window' style='width:"+windowObject.width+";height:"+windowObject.height+";'>";
     content += "<div id='"+windowObject.id+"_header' class='static_window_header'>"
     content += "<div class='static_window_icon'>"
+    content += "<img src='images/icons/close.ico' style='width:24px;height:24px;;position:absolute;right:0;top:0px;' onclick=\"document.getElementById('"+windowObject.id+"').style.visibility = 'hidden'\">"
     content += "<img src='"+windowObject.icon_dir+"' style='width:24px;height:24px;'>"
-    content += "<img src='images/icons/close.ico' style='width:24px;height:24px;position:absolute;right:0;top:0px;' onclick=\"document.getElementById('"+windowObject.id+"').style.visibility = 'hidden'\">"
     content += "</div>"
     content += "</div>"
     content += "<div id='"+windowObject.id+"_body' class='static_window_body'>"
+    for(var i = 0;i < windowObject.content.length;i++){
+        if(windowObject.content[i].tag == "input"){
+            content += "<input name='"+windowObject.content[i].name+"' type='"+windowObject.content[i].type+"'>"
+        }
+    }
     content +="</div>"
     windowSlot.innerHTML += content;
     makeDragable(windowObject.id)

@@ -9,5 +9,12 @@
     background-color:#eee;
 }
 .static_window_header{
-        background-color: #aaa;
+    background-color: #aaa;
+    height:24px;
+}
+.static_window_body{
+    background-color: #eee;
+    position:absolute;
+    height:90%;
+    width:100%;
 }
