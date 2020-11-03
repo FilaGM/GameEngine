@@ -30,7 +30,7 @@ var premadeWindowObjects = {
             },
             {
                 tag:"script",
-                content:""
+                content:"document.getElementById('')"
             }
         ]
     }
