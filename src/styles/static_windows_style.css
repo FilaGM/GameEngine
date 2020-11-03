@@ -1,0 +1,21 @@
+#static_windows{
+    position:absolute;
+    z-index: 99999;
+}
+.static_window{
+    position:absolute;
+    z-index: 99999;
+    border:2px solid #999;
+    background-color:#eee;
+    visibility:hidden;
+}
+.static_window_header{
+    background-color: #aaa;
+    height:24px;
+}
+.static_window_body{
+    background-color: #eee;
+    position:absolute;
+    height:90%;
+    width:100%;
+}
