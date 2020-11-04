@@ -20,7 +20,7 @@ function AddFolder(to,name,content){
 
 function AddFile(to,name,content){
     newfile = "";
-    newfile += "<li class='file'>";
+    newfile += "<li class='file' onclick='BrowseFile(this)' id='"+name+"_file'>";
     newfile += "<img src='images/icons/file.ico' class='file_icon'>"
     newfile += "<label class = 'file_label''>" + name + "</label>"
     newfile += "<label class = 'file_content'>"
@@ -68,7 +68,7 @@ function fileAdded(){
 }
 
 AddFolder("main","Scripts","");
-AddFile("Scripts","main.js","//Your main game script")
+AddFile("Scripts","main.js","//Your main game script.line.function main(){.line.console.log(\"Hello World!!!\").line.}")
 AddFolder("main","Sprites","");
 AddFolder("main","Other","");
 AddFolder("main","Objects","");

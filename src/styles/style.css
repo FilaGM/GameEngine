@@ -7,13 +7,15 @@ button {
     border-radius:5px;
     border-color:#fff;
     border-radius:0px;
+    font-family: 'Syne Mono', monospace;
 }
 body{
-        user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    font-family: 'Syne Mono', monospace;
 } 
 .center{
   margin: 0;
@@ -23,4 +25,12 @@ body{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
+select{
+    font-family: 'Syne Mono', monospace;
+}
+input{
+    font-family: 'Syne Mono', monospace;
+}
+.title{
+    
+}

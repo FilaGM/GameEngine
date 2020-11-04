@@ -1,5 +1,6 @@
 var premadeWindowObjects = {
     FileAddWindow:{
+        title:"Add menu",
         id:"add_menu",
         icon_dir:"images/icons/add_menu_icon.ico",
         width:400,
@@ -16,22 +17,51 @@ var premadeWindowObjects = {
             },
             {
                 tag:"input",
+                class:"add_menu_arg",
                 type:"text",
-                name:"name"
+                name:"name_in"
+            },
+            {
+                tag:"label",
+                content:"Directory(name of folder to):"
             },
             {
                 tag:"br"  
             },
             {
+                tag:"input",
+                class:"add_menu_arg",
+                type:"text",
+                name:"dir"
+            },
+            {
+                tag:"br"  
+            },
+            {
+                tag:"select",
+                class:"add_menu_arg",
+                name:"type",
+                options:[
+                    {
+                        content:"File",
+                        value:"file"
+                    },
+                    {
+                        content:"Folder",
+                        value:"folder"
+                    },
+                    {
+                        content:"Sprite",
+                        value:"sprite"
+                    }
+                ]
+            },
+            {
                 tag:"button",
                 content:"Add",
                 name:"add",
-                onclick:"a",
-            },
-            {
-                tag:"script",
-                content:"document.getElementById('')"
-            }
+                onclick:"AddNewFileButton()",
+            } 
         ]
     }
 }

@@ -1,0 +1,14 @@
+.editor_input{
+    width:100%;
+    border:0px;
+    border-radius:0px;
+    border-bottom: 1px solid black;
+}
+
+.editor_input:focus{
+    width:100%;
+    border:0px;
+    border-bottom: 1px solid black;
+    border-radius:0px;
+    background-color:#ddf;
+}

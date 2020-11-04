@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="src/styles/object_manager.css">
         <link rel="icon" type="image/png" href="images/icons/main_icon.ico"/>
         <link rel="stylesheet" href="src/styles/static_windows_style.css">
+        <link rel="stylesheet" href="src/styles/editor.css">
+        <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
         <title>Html5GameEngine</title>
         <script src="src/scripts/prefabs.js"></script>
         <title></title>
@@ -23,21 +25,41 @@
             </div>
             <div id="sidebar_left_tabs">
                 <div id="objects_manager_list">
+                    <center><label class="title">File list</label></center>
                     <ul id="main_object_manager_ul">
                         
                     </ul>
                 </div>
-                <div id="object_properties">
-                
+                <div id="object_manager_browser">
+                    <center><label class="title">File browser</label></center>
+                    <div id="file_browser">
+                        <div id="file_browser_file_name_div">
+                            <br>
+                            <label>File name: </label>
+                            <label id="file_browser_file_name" style="color:blue"></label>
+                        </div>
+                        <div id = "file_browser_file_content_div">
+                            <div id = "raw_content">
+                                <br>
+                                <label>File raw content: </label>
+                                <br>
+                                <label id="file_browser_file_content_raw" style="color:blue"></label>
+                            </div>
+                        </div>
+                        <br>
+                        <button style="position:absolute;bottom:0%;right:1%;" onclick="FileEditorOpen(currentBrowserFile)">Open in editor</button>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="bottom_panel" class="organizer">
             <div id="bottom_panel_header">
-            
+                <button style="height:100%" onclick="SaveEditorFile(currentEditorFile)">Save file</button>
             </div>
             <div id="bottom_panel_tabs">
-                
+                <div id="file_editor">
+                    
+                </div>
             </div>
         </div>
         <div id="sidebar_right" class="organizer">
@@ -49,10 +71,12 @@
             </div>
         </div>
         <div id="main_panel">
-            
+            <canvas id="main_canvas" style="width:100%;height:100%"></canvas>
         </div>
         <script src = "src/scripts/setup.js"></script>
-        <script src = "src/scripts/main_script.js"></script>
+        <script src = "src/scripts/Game.js"></script>
         <script src = "src/scripts/object_list.js"></script>
+        <script src = "src/scripts/object_browser.js"></script>
+        <script src = "src/scripts/main_script.js"></script>
     </body>
 </html>
