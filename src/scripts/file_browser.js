@@ -19,8 +19,9 @@ function FileEditorOpen(file){
         var content = file.getElementsByClassName("file_content")[0].innerHTML
         content = content.split(".line.")
         for(var i = 0;i < content.length;i++){
-            editor.innerHTML += "<input type = 'text' value = '"+content[i]+"' class='editor_input' id='editor_input_"+i+"'>"
+            editor.innerHTML += "<div><input type = 'text' value = '"+content[i]+"' class='editor_input' id='editor_input_"+i+"'><span class='editor_input_span'></span><div>"
         }
+        renderScriptColorsEditor()
     }
 }
 
@@ -37,10 +38,37 @@ function SaveEditorFile(file){
         }
         BrowseFile(currentEditorFile)
         FileEditorOpen(currentEditorFile)
+        renderScriptColorsEditor()
         game.reloadMainFunction(document.getElementById("main.js_file"))
     }
     else{
         alert("no file opened")
+    }
+}
+
+function renderScriptColorsEditor(){
+    var editor = document.getElementById("file_editor")
+    var inputs = editor.getElementsByClassName("editor_input")
+    var lastFunction = false;
+    for(var i = 0;i < inputs.length;i++){
+        if(inputs[i].value[0] == "/" && inputs[i].value[0] == "/"){
+            inputs[i].style.color = editorColors.commentColor;
+        }
+        else if(inputs[i].value.substring(0,8) == "function" && lastFunction == false){
+            inputs[i].style.color = editorColors.functionColor;
+            lastFunction = true;
+            
+        }
+        else if(inputs[i].value[0] == "}" && lastFunction == true){
+            inputs[i].style.color = editorColors.functionColor;
+            lastFunction = false;
+        }
+        else if(lastFunction == true){
+            inputs[i].style.color = editorColors.functionInsideColor;
+        }
+        else{
+            inputs[i].style.color = editorColors.baseColor;
+        }
     }
 }
 
